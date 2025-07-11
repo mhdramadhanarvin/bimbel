@@ -1,1 +1,1 @@
-import "../css/skilline.css";
+import "../css/custom.css";

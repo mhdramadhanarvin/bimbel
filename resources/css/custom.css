@@ -1,8 +1,7 @@
 /*primary color*/
 .bg-cream {
-    background-color: #fff2e1;
+    background-color: #03a1fccc;
 }
-
 /*font*/
 body {
     font-family: "Poppins", sans-serif;
@@ -11,9 +10,19 @@ body {
 .bg-yellow-500 {
     background-color: #f48c06;
 }
+
+.bg-blue-custom {
+    background-color: #03a1fccc;
+}
+
 .text-yellow-500 {
     color: #f48c06;
 }
+
+.text-blue-custom {
+    color: #03a1fccc;
+}
+
 .floating {
     animation-name: floating;
     animation-duration: 3s;
