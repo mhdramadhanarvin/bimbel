@@ -3,11 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Skilline Landing Page</title>
+	<title>Ruangguru - Bimbel Terbaik Khusus TNI & Polri</title>
 	<!-- Tailwind -->
-	<!-- Alpine -->
+	<!-- Alpine
 	<script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
 	<script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    -->
 	<!-- AOS -->
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<!-- Poppins font -->
@@ -17,14 +18,15 @@
 </head>
 <body class="antialiased">
 	<!-- navbar -->
-	<div x-data="{ open: false }" class="w-full text-gray-700 bg-cream">
+	<div class="w-full text-gray-700 bg-cream">
         <div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
-            <div class="flex flex-row items-center justify-between py-6">
+            <div class="flex flex-row items-center py-6">
                 <div class="relative md:mt-8">
-                    <a href="#" class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">Skilline</a>
+                    <!--PUT LOGO HERE-->
+                    <!---<a href="#" class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">Brand</a>
                     <svg class="h-11 z-40 absolute -top-2 -left-3" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M35.2574 2.24264C37.6005 -0.100501 41.3995 -0.100505 43.7426 2.24264L76.7574 35.2574C79.1005 37.6005 79.1005 41.3995 76.7574 43.7426L43.7426 76.7574C41.3995 79.1005 37.6005 79.1005 35.2574 76.7574L2.24264 43.7426C-0.100501 41.3995 -0.100505 37.6005 2.24264 35.2574L35.2574 2.24264Z" fill="#65DAFF"/>
-                    </svg>
+                    </svg>-->
                 </div>
                 <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                     <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
@@ -33,13 +35,13 @@
                     </svg>
                 </button>
             </div>
-            <nav :class="{ 'transform md:transform-none': !open, 'h-full': open }" class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 scale-y-0">
-                <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">Home</a>
-                <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">Careers</a>
-                <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">Blog</a>
-                <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">About Us</a>
-                <a class="px-10 py-3 mt-2 text-sm text-center bg-white text-gray-800 rounded-full md:mt-8 md:ml-4" href="#">Login</a>
-                <a class="px-10 py-3 mt-2 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4" href="#">Sign Up</a>
+            <nav class="transform md:transform-none h-full p-2 z-40" class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 scale-y-0">
+                <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline hover:cursor-pointer" href="/">Beranda</a>
+                <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline hover:cursor-pointer" href="#whoami">Apa Itu Ruangguru?</a>
+                <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline hover:cursor-pointer" href="#facility">Fasilitas</a>
+                <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline hover:cursor-pointer" href="#about">Tentang Kami</a>
+                <!--<a class="px-10 py-3 mt-2 text-sm text-center bg-white text-gray-800 rounded-full md:mt-8 md:ml-4" href="#">Login</a>-->
+                <a class="px-5 py-3 mt-2 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4" href="{{ route('register') }}">Daftar Sekarang</a>
             </nav>
         </div>
     </div>
@@ -54,14 +56,16 @@
                 <span class="text-sm block font-bold">Telah membantu 250+ Calon Siswa Berhasil Lolos</span>
 </p>
 				<div data-aos="fade-up" data-aos-once="true" data-aos-delay="700" class="w-full md:flex items-center justify-center lg:justify-start md:space-x-5">
-					<button class="lg:mx-0 bg-yellow-500 text-white text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
-						Konsultasi Gratis
-					</button>
+                    <a href="https://wa.me/6281234567890?text=Halo admin saya ingin konsultasi.." target="_BLANK">
+                        <button class="lg:mx-0 bg-yellow-500 text-white text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out hover:cursor-pointer">
+                            Konsultasi Gratis
+                        </button>
+                    </a>
 				</div>
 			</div>
 			<!--Right Col-->
 			<div class="w-full lg:w-6/12 lg:-mt-10 relative" id="girl">
-				<img data-aos="fade-up" data-aos-once="true" class="w-10/12 mx-auto 2xl:-mb-20" src="{{ asset('images/girl.png') }}" />
+				<img data-aos="fade-up" data-aos-once="true" class="w-10/12 mx-auto 2xl:-mb-20" src="{{ asset('images/man-home.png') }}" />
 				<!-- calendar -->
 				<div data-aos="fade-up" data-aos-delay="300" data-aos-once="true" class="absolute top-20 -left-6 sm:top-32 sm:left-10 md:top-40 md:left-16 lg:-left-0 lg:top-52 floating-4">
 					<img class="bg-opacity-80 rounded-lg h-12 sm:h-16" src="{{ asset('images/sertu.png') }}">
@@ -90,9 +94,9 @@
 	</div>
 
 	<!-- container -->
-	<div class="container px-4 lg:px-8 mx-auto max-w-screen-xl text-gray-700 overflow-x-hidden">
+	<div class="container px-4 lg:px-8 mx-auto max-w-screen-xl text-gray-700 overflow-x-hidden" id="whoami">
 
-		<!-- trusted by -->
+		<!-- trusted by
 		<div class="max-w-4xl mx-auto">
 			<h1 class="text-center mb-3 text-gray-400 font-medium">Trusted by 5,000+ Companies Worldwide</h1>
 			<div class="grid grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center">
@@ -103,7 +107,7 @@
 				<img class="h-7" src="{{ asset('images/company/facebook.svg') }}">
 				<img class="h-7" src="{{ asset('images/company/grab.svg') }}">
 			</div>
-		</div>
+		</div>-->
 
 		<!-- All-In-One Cloud Software. -->
 		<div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24">
@@ -158,29 +162,33 @@
 				<h1 class="text-3xl font-bold mb-4">Apa itu <span class="text-blue-custom">Ruangguru?</span></h1>
 				<p class="text-gray-500">Ruangguru adalah bimbingan belajar khusus untuk mempersiapkan calon TNI & Polri agar dapat bersaing dan lulus di setiap tahapan tesnya.</p>
 			</div>
-			<div data-aos="fade-up" class="flex flex-col md:flex-row justify-center space-y-5 md:space-y-0 md:space-x-6 lg:space-x-10 mt-7">
+			<div data-aos="fade-up" class="flex flex-col md:flex-row justify-center space-y-5 md:space-y-0 md:space-x-6 lg:space-x-10 mt-7 ">
 				<div class="relative md:w-5/12">
-					<img class="rounded-2xl" src="{{ asset('images/Rectangle 19.png') }}" alt="">
+					<img class="rounded-2xl" src="{{ asset('images/special-tni.png') }}" alt="">
 					<div class="absolute bg-opacity-20 bottom-0 left-0 right-0 w-full h-full rounded-2xl">
 						<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-							<h1 class="uppercase text-white font-bold text-center text-sm lg:text-xl mb-3">FOR INSTRUCTORS</h1>
-							<button class="rounded-full text-white border text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">Start a class today</button>
+							<h1 class="uppercase text-white font-bold text-center text-sm lg:text-xl mb-3">Khusus TNI</h1>
+                            <a href="#">
+                                <button class="rounded-full text-white border text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out hover:cursor-pointer bg-linear-65 from-gray-500 to-white opacity-85">Daftar Sekarang</button>
+                            </a>
 						</div>
 					</div>
 				</div>
 				<div class="relative md:w-5/12">
-					<img class="rounded-2xl" src="{{ asset('images/Rectangle 21.png') }}" alt="">
+					<img class="rounded-2xl" src="{{ asset('images/special-police.png') }}" alt="">
 					<div class="absolute bg-opacity-20 bottom-0 left-0 right-0 w-full h-full rounded-2xl">
 						<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-							<h1 class="uppercase text-white font-bold text-center text-sm lg:text-xl mb-3">FOR STUDENTS</h1>
-							<button class="rounded-full text-white text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out" style="background: rgba(35, 189, 238, 0.9)">Enter access code</button>
+							<h1 class="uppercase text-white font-bold text-center text-sm lg:text-xl mb-3">Khusus Polri</h1>
+                            <a href="#">
+                                <button class="rounded-full text-white text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out hover:cursor-pointer" style="background: rgba(35, 189, 238, 0.9)">Daftar Sekarang</button>
+                            </a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="sm:flex items-center sm:space-x-8 mt-36">
+		<div class="sm:flex items-center sm:space-x-8 mt-36" id="facility">
 			<div data-aos="fade-right" class="sm:w-1/2 relative">
 				<div class="bg-blue-custom rounded-full absolute w-12 h-12 z-0 -left-4 -top-3 animate-pulse"></div>
 				<h1 class="font-semibold text-2xl relative z-50 text-darken lg:pr-10">Fasilitas Belajar <span class="text-blue-custom">Komprehensif</span></h1>
@@ -189,12 +197,7 @@
 			</div>
 			<div data-aos="fade-left" class="sm:w-1/2 relative mt-10 sm:mt-0">
 				<div style="background: #23BDEE;" class="floating w-24 h-24 absolute rounded-lg z-0 -top-3 -left-3"></div>
-				<img class="rounded-xl z-40 relative" src="{{ asset('images/teacher-explaining.png') }}" alt="">
-				<button class="bg-white w-14 h-14 rounded-full flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out z-50">
-					<svg class="w-5 h-5 ml-1" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M22.5751 12.8097C23.2212 13.1983 23.2212 14.135 22.5751 14.5236L1.51538 27.1891C0.848878 27.5899 5.91205e-07 27.1099 6.25202e-07 26.3321L1.73245e-06 1.00123C1.76645e-06 0.223477 0.848877 -0.256572 1.51538 0.14427L22.5751 12.8097Z" fill="#23BDEE"/>
-					</svg>
-				</button>
+				<img class="rounded-xl z-40 relative" src="{{ asset('images/teaching.png') }}" alt="">
 				<div class="bg-yellow-500 w-40 h-40 floating absolute rounded-lg z-10 -bottom-3 -right-3"></div>
 			</div>
 		</div>
@@ -275,7 +278,7 @@
 		<!-- One-on-One Discussions -->
 		<div class="mt-24 flex flex-col-reverse md:flex-row items-center md:space-x-10">
 			<div data-aos="fade-right" class="md:w-7/12">
-				<img class="md:w-11/12" src="{{ asset('images/discussion.png') }}">
+				<img class="md:w-11/12" src="{{ asset('images/discussion2.png') }}">
 			</div>
 			<div data-aos="fade-left" class="md:w-5/12 md:transform md:-translate-y-6">
 				<h1 class="font-semibold text-darken text-3xl lg:pr-64">Konsultasi dan <span class="text-blue-custom">Bimbingan Privat</span></h1>
@@ -285,7 +288,7 @@
 
 		<button data-aos="flip-up" class="px-5 py-3 border border-yellow-500 text-yellow-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block">See more features</button>
 
-		<!-- INTEGRATIONS -->
+		<!-- INTEGRATIONS
 		<div class="mt-24 flex flex-col md:flex-row items-start md:space-x-10">
 			<div data-aos="zoom-in-right" class="md:w-6/12">
 				<img class="md:w-8/12 mx-auto" src="{{ asset('images/integrations.png') }}">
@@ -300,6 +303,7 @@
 				<button class="px-5 py-3 border border-yellow-500 text-yellow-500 font-medium my-4 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full">See All Integrations</button>
 			</div>
 		</div>
+         -->
 
 		<!-- TESTIMONIAL -->
 		<div class="mt-24 flex flex-col-reverse md:flex-row items-start md:space-x-10">
@@ -321,60 +325,42 @@
 				</button>
 			</div>
 			<div data-aos="zoom-in-left" class="md:w-7/12">
-				<img class="md:w-10/12 mx-auto" src="{{ asset('images/testimonials.png') }}">
+				<img class="md:w-10/12 mx-auto" src="{{ asset('images/testi.png') }}">
 			</div>
 		</div>
 
+        <div  id="about"></div>
 		<!-- Latest News and Resources -->
 		<div data-aos="zoom-in" class="mt-16 text-center">
-			<h1 class="text-darken text-2xl font-semibold">Latest News and Resources</h1>
-			<p class="text-gray-500 my-5">See the developments that have occurred to Skillines in the world</p>
+			<h1 class="text-darken text-3xl font-semibold">Kontak Kami</h1>
+			<p class="text-gray-500 my-5">Kami selalu siap untuk membantu Anda dengan segala pertanyaan atau masalah yang mungkin Anda hadapi.</p>
 		</div>
 		<div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20">
 			<div class="lg:w-6/12">
-				<img class="w-full mb-6" src="{{ asset('images/laptop-news.png') }}">
-				<span class="bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full">NEWS</span>
-				<h1 class="text-gray-800 font-semibold my-3 text-xl">Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution</h1>
-				<p class="text-gray-500 mb-3">Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...</p>
-				<a href="" class="underline">Read more</a>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15928.274715381593!2d98.68594274869324!3d3.5716771674814796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303125fce8a9ffa5%3A0x88261f66884ebd98!2sAlligator%20Roastery!5e0!3m2!1sid!2sid!4v1752381825448!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
-			<div class="lg:w-7/12 flex flex-col justify-between mt-12 space-y-5 lg:space-y-0 lg:mt-0">
+			<div class="lg:w-7/12 flex flex-col gap-10 mt-12 space-y-5 lg:space-y-0 lg:mt-0">
 				<div class="flex space-x-5">
-					<div class="w-4/12">
-						<div class="relative">
-							<img class="rounded-xl w-full" src="{{ asset('images/children-laptop.png') }}">
-							<span class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">PRESS RELEASE</span>
-						</div>
-					</div>
-					<div class="w-8/12">
-						<h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Class Technologies Inc. Closes $30 Million Series A Financing to Meet High Demand</h1>
-						<p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Class Technologies Inc., the company that created Class,...</p>
-					</div>
-				</div>
+                    <i class="fa-solid fa-envelope text-2xl"></i>
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-xl font-thin">Email</h3>
+                        <h5 class="text-md font-thin underline">Ruangguru@example.com</h5>
+                    </div>
+                </div>
 				<div class="flex space-x-5">
-					<div class="w-4/12">
-						<div class="relative">
-							<img class="rounded-xl w-full" src="{{ asset('images/girl-laptop.png') }}">
-							<span class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
-						</div>
-					</div>
-					<div class="w-8/12">
-						<h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Zoom’s earliest investors are betting millions on a better Zoom for schools</h1>
-						<p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Zoom was never created to be a consumer product. Nonetheless, the...</p>
-					</div>
-				</div>
+                    <i class="fa-solid fa-phone text-2xl"></i>
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-xl font-thin">Telepon</h3>
+                        <h5 class="text-md font-thin underline">+628 12 1234 1234</h5>
+                    </div>
+                </div>
 				<div class="flex space-x-5">
-					<div class="w-4/12">
-						<div class="relative">
-							<img class="rounded-xl w-full" src="{{ asset('images/cat-laptop.png') }}">
-							<span class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
-						</div>
-					</div>
-					<div class="w-8/12">
-						<h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Former Blackboard CEO Raises $16M to Bring LMS Features to Zoom Classrooms</h1>
-						<p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">This year, investors have reaped big financial returns from betting on Zoom...</p>
-					</div>
-				</div>
+                    <i class="fa-solid fa-location-dot text-2xl"></i>
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-xl font-thin">Alamat</h3>
+                        <h5 class="text-md font-thin underline">Jalan Gatot Subroto, Medan Sunggal, Sumatera Utara</h5>
+                    </div>
+                </div>
 			</div>
 		</div>
 
@@ -385,14 +371,12 @@
 		<div class="max-w-lg mx-auto">
 			<div class="flex py-12 justify-center text-white items-center px-20 sm:px-36">
 				<div class="relative">
-					<h1 class="font-bold text-xl pr-5 relative z-50">Skilline</h1>
 					<svg class="w-11 h-11 absolute -top-2 -left-3 z-40" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M35.9645 2.94975C37.9171 0.997129 41.0829 0.997127 43.0355 2.94975L76.0502 35.9645C78.0029 37.9171 78.0029 41.0829 76.0503 43.0355L43.0355 76.0502C41.0829 78.0029 37.9171 78.0029 35.9645 76.0503L2.94975 43.0355C0.997129 41.0829 0.997127 37.9171 2.94975 35.9645L35.9645 2.94975Z" stroke="#26C1F2" stroke-width="2"/>
 					</svg>
 				</div>
-				<span class="border-l border-gray-500 text-sm pl-5 py-2 font-semibold">Virtual Class for Zoom</span>
 			</div>
-			<div class="text-center pb-16 pt-5">
+			<!--<div class="text-center pb-16 pt-5">
 				<label class="text-gray-300 font-semibold">Subscribe to get our Newsletter</label>
 				<div class="px-5 sm:px-0 flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 justify-center mt-3">
 					<input type="email" placeholder="Your Email" class="rounded-full py-2 pl-5 bg-transparent border border-gray-400">
@@ -403,13 +387,9 @@
 				<a href="" class="pr-3">Careers</a>
 				<a href="" class="border-l border-gray-400 px-3">Privacy</a>
 				<a href="" class="border-l border-gray-400 pl-3">Terms & Conditions</a>
-			</div>
-			<div class="text-center text-white">
-				<p class="my-3 text-gray-400 text-sm">&copy; 2021 Class Technologies Inc. </p>
-				<div class="py-3 tracking-wide">
-					<p>Code By <span class="font-semibold">mhaecal</span></p>
-					<p>UI/UX By <span class="font-semibold">Irvan Moses</span></p>
-				</div>
+			</div>-->
+			<div class="text-center text-white py-3 tracking-wide">
+				<p class="my-3 text-gray-400 text-sm">&copy; 2025 Ruangguru. All Right Reserved. </p>
 			</div>
 		</div>
 	</footer>
