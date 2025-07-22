@@ -44,7 +44,7 @@
                 </table>
             </div>
             <p class="py-4">Silahkan lakukan pembayaran ke rekening berikut ini sebelum:</p>
-            <h3 class="font-bold text-xl text-center">{{ date('d F Y H:i:s', strtotime(Auth::user()->created_at) ) }}</h3>
+            <h3 class="font-bold text-xl text-center">{{ date('d F Y H:i:s', strtotime($expired_payment) ) }}</h3>
             <div class="py-4 overflow-hidden dark:border-neutral-700 flex items-center">
                 <table class="text-md">
                     <tr>

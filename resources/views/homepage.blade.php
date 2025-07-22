@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ruangguru - Bimbel Terbaik Khusus TNI & Polri</title>
+	<title>UNIBEN - Bimbel Terbaik Khusus TNI & Polri</title>
 	<!-- Tailwind -->
 	<!-- Alpine
 	<script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
@@ -37,7 +37,7 @@
             </div>
             <nav class="transform md:transform-none h-full p-2 z-40" class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 scale-y-0">
                 <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline hover:cursor-pointer" href="/">Beranda</a>
-                <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline hover:cursor-pointer" href="#whoami">Apa Itu Ruangguru?</a>
+                <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline hover:cursor-pointer" href="#whoami">Apa Itu UNIBEN?</a>
                 <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline hover:cursor-pointer" href="#facility">Fasilitas</a>
                 <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline hover:cursor-pointer" href="#about">Tentang Kami</a>
                 <!--<a class="px-10 py-3 mt-2 text-sm text-center bg-white text-gray-800 rounded-full md:mt-8 md:ml-4" href="#">Login</a>-->
@@ -52,11 +52,11 @@
 				<h1 data-aos="fade-right" data-aos-once="true" class="my-4 text-5xl font-bold leading-tight text-darken">
 					<span class="text-yellow-500">Wujudkan Cita-cita Abdi Negara</span> Persiapan TNI & Polri Terlengkap!
 				</h1>
-				<p data-aos="fade-down" data-aos-once="true" data-aos-delay="300" class="leading-normal text-2xl mb-8">Bersama Ruangguru, kami membimbingmu langkah demi langkah menuju gerbang kesuksesan seleksi TNI dan Polri.
+				<p data-aos="fade-down" data-aos-once="true" data-aos-delay="300" class="leading-normal text-2xl mb-8">Bersama UNIBEN, kami membimbingmu langkah demi langkah menuju gerbang kesuksesan seleksi TNI dan Polri.
                 <span class="text-sm block font-bold">Telah membantu 250+ Calon Siswa Berhasil Lolos</span>
 </p>
 				<div data-aos="fade-up" data-aos-once="true" data-aos-delay="700" class="w-full md:flex items-center justify-center lg:justify-start md:space-x-5">
-                    <a href="https://wa.me/6281234567890?text=Halo admin saya ingin konsultasi.." target="_BLANK">
+                    <a href="https://wa.me/6281234567890?text=Halo admin saya ingin konsultasi.." target="_BLANK" class="z-50">
                         <button class="lg:mx-0 bg-yellow-500 text-white text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out hover:cursor-pointer">
                             Konsultasi Gratis
                         </button>
@@ -112,7 +112,7 @@
 		<!-- All-In-One Cloud Software. -->
 		<div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24">
 			<h1 class="font-bold text-darken my-3 text-2xl">Bimbel terbaik untuk <span class="text-blue-custom">Persiapan TNI & Polri</span></h1>
-			<p class="leading-relaxed text-gray-500">Ruangguru adalah lembaga bimbingan belajar terdepan untuk calon TNI & Polri. Kami menghadirkan kombinasi bimbingan yang komprehensif, khusus dirancang untuk memaksimalkan peluang kelulusanmu.</p>
+			<p class="leading-relaxed text-gray-500">UNIBEN adalah lembaga bimbingan belajar terdepan untuk calon TNI & Polri. Kami menghadirkan kombinasi bimbingan yang komprehensif, khusus dirancang untuk memaksimalkan peluang kelulusanmu.</p>
 		</div>
 		<!-- card -->
 		<div class="grid md:grid-cols-3 gap-14 md:gap-5 mt-20">
@@ -159,8 +159,8 @@
 		<!-- lorem -->
 		<div class="mt-28">
 			<div data-aos="flip-down" class="text-center max-w-screen-md mx-auto">
-				<h1 class="text-3xl font-bold mb-4">Apa itu <span class="text-blue-custom">Ruangguru?</span></h1>
-				<p class="text-gray-500">Ruangguru adalah bimbingan belajar khusus untuk mempersiapkan calon TNI & Polri agar dapat bersaing dan lulus di setiap tahapan tesnya.</p>
+				<h1 class="text-3xl font-bold mb-4">Apa itu <span class="text-blue-custom">UNIBEN?</span></h1>
+				<p class="text-gray-500">UNIBEN adalah bimbingan belajar khusus untuk mempersiapkan calon TNI & Polri agar dapat bersaing dan lulus di setiap tahapan tesnya.</p>
 			</div>
 			<div data-aos="fade-up" class="flex flex-col md:flex-row justify-center space-y-5 md:space-y-0 md:space-x-6 lg:space-x-10 mt-7 ">
 				<div class="relative md:w-5/12">
@@ -192,7 +192,7 @@
 			<div data-aos="fade-right" class="sm:w-1/2 relative">
 				<div class="bg-blue-custom rounded-full absolute w-12 h-12 z-0 -left-4 -top-3 animate-pulse"></div>
 				<h1 class="font-semibold text-2xl relative z-50 text-darken lg:pr-10">Fasilitas Belajar <span class="text-blue-custom">Komprehensif</span></h1>
-				<p class="py-5 lg:pr-32">Ruangguru menyediakan semua fasilitas yang kamu butuhkan. Mulai dari materi akademik, psikotes, hingga persiapan fisik.</p>
+				<p class="py-5 lg:pr-32">UNIBEN menyediakan semua fasilitas yang kamu butuhkan. Mulai dari materi akademik, psikotes, hingga persiapan fisik.</p>
 				<a href="" class="underline">Learn More</a>
 			</div>
 			<div data-aos="fade-left" class="sm:w-1/2 relative mt-10 sm:mt-0">
@@ -315,14 +315,16 @@
 				<h1 class="font-semibold text-darken text-2xl lg:pr-40">Kisah Sukses Mereka, Inspirasi Bagimu</h1>
 				<p class="text-gray-500 my-5 lg:pr-36">Kami bangga dengan lebih dari 100 ulasan positif siswa yang berhasil mewujudkan impian mereka di TNI/Polri berkat bimbingan kami.</p>
 				<p class="text-gray-500 my-5 lg:pr-36">Apakah Anda siap menjadi bagian dari cerita sukses berikutnya?</p>
-				<button class="flex items-center space-x-3 pl-3 border-b border-l border-t border-yellow-500 text-yellow-500 font-medium my-4 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full">
-					<span>Saya ingin seperti mereka</span>
-					<div class="border border-yellow-500 h-14 w-14 rounded-full flex items-center justify-center">
-						<svg class="w-5 h-5" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M25.7071 8.70711C26.0976 8.31658 26.0976 7.68342 25.7071 7.2929L19.3431 0.928934C18.9526 0.538409 18.3195 0.538409 17.9289 0.928934C17.5384 1.31946 17.5384 1.95262 17.9289 2.34315L23.5858 8L17.9289 13.6569C17.5384 14.0474 17.5384 14.6805 17.9289 15.0711C18.3195 15.4616 18.9526 15.4616 19.3431 15.0711L25.7071 8.70711ZM-8.74228e-08 9L25 9L25 7L8.74228e-08 7L-8.74228e-08 9Z" fill="#F48C06"/>
-						</svg>
-					</div>
-				</button>
+                <a href="{{ route('register') }}">
+                    <button class="flex items-center space-x-3 pl-3 border-b border-l border-t border-yellow-500 text-yellow-500 font-medium my-4 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full">
+                        <span>Saya ingin seperti mereka</span>
+                        <div class="border border-yellow-500 h-14 w-14 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M25.7071 8.70711C26.0976 8.31658 26.0976 7.68342 25.7071 7.2929L19.3431 0.928934C18.9526 0.538409 18.3195 0.538409 17.9289 0.928934C17.5384 1.31946 17.5384 1.95262 17.9289 2.34315L23.5858 8L17.9289 13.6569C17.5384 14.0474 17.5384 14.6805 17.9289 15.0711C18.3195 15.4616 18.9526 15.4616 19.3431 15.0711L25.7071 8.70711ZM-8.74228e-08 9L25 9L25 7L8.74228e-08 7L-8.74228e-08 9Z" fill="#F48C06"/>
+                            </svg>
+                        </div>
+                    </button>
+                </a>
 			</div>
 			<div data-aos="zoom-in-left" class="md:w-7/12">
 				<img class="md:w-10/12 mx-auto" src="{{ asset('images/testi.png') }}">
@@ -344,7 +346,7 @@
                     <i class="fa-solid fa-envelope text-2xl"></i>
                     <div class="flex flex-col gap-2">
                         <h3 class="text-xl font-thin">Email</h3>
-                        <h5 class="text-md font-thin underline">Ruangguru@example.com</h5>
+                        <h5 class="text-md font-thin underline">cs@uniben.com</h5>
                     </div>
                 </div>
 				<div class="flex space-x-5">
@@ -389,7 +391,7 @@
 				<a href="" class="border-l border-gray-400 pl-3">Terms & Conditions</a>
 			</div>-->
 			<div class="text-center text-white py-3 tracking-wide">
-				<p class="my-3 text-gray-400 text-sm">&copy; 2025 Ruangguru. All Right Reserved. </p>
+				<p class="my-3 text-gray-400 text-sm">&copy; 2025 UNIBEN. All Right Reserved. </p>
 			</div>
 		</div>
 	</footer>

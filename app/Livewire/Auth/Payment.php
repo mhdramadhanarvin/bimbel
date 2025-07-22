@@ -3,6 +3,7 @@
 namespace App\Livewire\Auth;
 
 use App\Models\UserPayment;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Layout;
@@ -19,6 +20,12 @@ class Payment extends Component
     public $proof_of_payment;
 
     public $registration_number = 'A';
+    public $expired_payment;
+
+    public function mount()
+    {
+        $this->expired_payment = Carbon::parse(Auth::user()->created_at)->addDay();
+    }
 
     /**
      * Handle an incoming registration request.
@@ -27,7 +34,7 @@ class Payment extends Component
     {
         $this->validate();
 
-        $proof_of_payment = $this->proof_of_payment->store('proof_of_payment');
+        $proof_of_payment = $this->proof_of_payment->store('proof_of_payment', 'public');
 
         $this->registration_number = Str::of(fake()->regexify('[A-Za-z0-9]{8}'))->upper();
         UserPayment::create([

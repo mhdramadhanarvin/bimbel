@@ -25,6 +25,7 @@ return new class extends Migration {
             $table->foreignId('user_id')->nullable()->index();
             $table->string('registration_number');
             $table->string('proof_of_payment');
+            $table->enum('status', ['pending', 'confirmed', 'rejected']);
             $table->timestamps();
         });
 
