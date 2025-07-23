@@ -4,7 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Enums\UserPaymentStatusEnum;
 use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms\Form;
 use Filament\Infolists\Components\Actions\Action as ActionInfolist;
@@ -16,10 +15,8 @@ use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Forms;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class UserResource extends Resource
 {
