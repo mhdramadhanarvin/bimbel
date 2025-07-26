@@ -23,8 +23,10 @@
             <div class="flex flex-row items-center py-6">
                 <div class="relative md:mt-8">
                     <!--PUT LOGO HERE-->
-                    <!---<a href="#" class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">Brand</a>
-                    <svg class="h-11 z-40 absolute -top-2 -left-3" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a href="#" class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">
+                        <img src="{{ asset('images/logo.png') }}" class="w-20"/>
+                    </a>
+                    <!--<svg class="h-11 z-40 absolute -top-2 -left-3" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M35.2574 2.24264C37.6005 -0.100501 41.3995 -0.100505 43.7426 2.24264L76.7574 35.2574C79.1005 37.6005 79.1005 41.3995 76.7574 43.7426L43.7426 76.7574C41.3995 79.1005 37.6005 79.1005 35.2574 76.7574L2.24264 43.7426C-0.100501 41.3995 -0.100505 37.6005 2.24264 35.2574L35.2574 2.24264Z" fill="#65DAFF"/>
                     </svg>-->
                 </div>
@@ -339,7 +341,7 @@
 		</div>
 		<div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20">
 			<div class="lg:w-6/12">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15928.274715381593!2d98.68594274869324!3d3.5716771674814796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303125fce8a9ffa5%3A0x88261f66884ebd98!2sAlligator%20Roastery!5e0!3m2!1sid!2sid!4v1752381825448!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.15548870337!2d98.62573751110494!3d3.551609796407708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f37ad0bb2f5%3A0x97ef6e84f405fa51!2sBimbel%20UNIBEN!5e0!3m2!1sid!2sid!4v1753252587136!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 			<div class="lg:w-7/12 flex flex-col gap-10 mt-12 space-y-5 lg:space-y-0 lg:mt-0">
 				<div class="flex space-x-5">
@@ -353,14 +355,14 @@
                     <i class="fa-solid fa-phone text-2xl"></i>
                     <div class="flex flex-col gap-2">
                         <h3 class="text-xl font-thin">Telepon</h3>
-                        <h5 class="text-md font-thin underline">+628 12 1234 1234</h5>
+                        <h5 class="text-md font-thin underline">+628 12 6319 1113</h5>
                     </div>
                 </div>
 				<div class="flex space-x-5">
                     <i class="fa-solid fa-location-dot text-2xl"></i>
                     <div class="flex flex-col gap-2">
                         <h3 class="text-xl font-thin">Alamat</h3>
-                        <h5 class="text-md font-thin underline">Jalan Gatot Subroto, Medan Sunggal, Sumatera Utara</h5>
+                        <h5 class="text-md font-thin underline">Jl. Bunga Melur No.14, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20133</h5>
                     </div>
                 </div>
 			</div>
@@ -373,9 +375,10 @@
 		<div class="max-w-lg mx-auto">
 			<div class="flex py-12 justify-center text-white items-center px-20 sm:px-36">
 				<div class="relative">
-					<svg class="w-11 h-11 absolute -top-2 -left-3 z-40" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <img src="{{ asset('images/logo.png') }}" class="w-20"/>
+					<!--<svg class="w-11 h-11 absolute -top-2 -left-3 z-40" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M35.9645 2.94975C37.9171 0.997129 41.0829 0.997127 43.0355 2.94975L76.0502 35.9645C78.0029 37.9171 78.0029 41.0829 76.0503 43.0355L43.0355 76.0502C41.0829 78.0029 37.9171 78.0029 35.9645 76.0503L2.94975 43.0355C0.997129 41.0829 0.997127 37.9171 2.94975 35.9645L35.9645 2.94975Z" stroke="#26C1F2" stroke-width="2"/>
-					</svg>
+					</svg>-->
 				</div>
 			</div>
 			<!--<div class="text-center pb-16 pt-5">

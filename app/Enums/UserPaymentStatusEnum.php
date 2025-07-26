@@ -11,6 +11,7 @@ enum UserPaymentStatusEnum: string implements HasColor, HasLabel, HasIcon
     case WAITING_CONFIRMATION = 'pending';
     case APPROVED = 'confirmed';
     case REJECTED = 'rejected';
+    case DEFAULT = '';
 
     public function getColor(): string|array|null
     {
@@ -18,6 +19,7 @@ enum UserPaymentStatusEnum: string implements HasColor, HasLabel, HasIcon
             self::WAITING_CONFIRMATION => 'warning',
             self::APPROVED => 'success',
             self::REJECTED => 'danger',
+            self::DEFAULT => 'danger',
         };
     }
 
@@ -27,6 +29,7 @@ enum UserPaymentStatusEnum: string implements HasColor, HasLabel, HasIcon
             self::WAITING_CONFIRMATION => 'Menunggu Konfirmasi',
             self::APPROVED => 'Disetujui',
             self::REJECTED => 'Ditolak',
+            self::DEFAULT => 'Belum Melakukan Pendaftaran',
         };
     }
 
@@ -36,6 +39,7 @@ enum UserPaymentStatusEnum: string implements HasColor, HasLabel, HasIcon
             self::WAITING_CONFIRMATION => 'heroicon-m-arrow-path',
             self::APPROVED => 'heroicon-m-check',
             self::REJECTED => 'heroicon-m-x-mark',
+            self::DEFAULT => 'heroicon-m-x-mark',
         };
     }
 }

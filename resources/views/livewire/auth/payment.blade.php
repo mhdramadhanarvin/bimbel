@@ -4,7 +4,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="text-center" :status="session('status')" />
 
-    <flux:modal name="success" class="md:w-96" :dismissible="false" @close="closeModal">
+    <flux:modal name="success" class="md:w-96 text-gray-300" :dismissible="false" @close="closeModal">
         <div class="space-y-6">
             <div>
                 <div class="flex justify-center">
@@ -18,7 +18,7 @@
     </flux:modal>
 
     <form wire:submit="pay" class="flex justify-center">
-        <div class="rounded-xl">
+        <div class="rounded-xl dark:text-gray-300">
             <div class="overflow-hidden dark:border-neutral-700 flex items-center mt-4">
                 <table class="text-md">
                     <tr>
@@ -60,12 +60,11 @@
                     <tr>
                         <td>Nama Akun</td>
                         <td class="px-6">:</td>
-                        <td class="font-semibold">PT. Ruangguru</td>
-                    </tr>
+                        <td class="font-semibold">Bimbel UNIBEN</td> </tr>
                     <tr>
                         <td>Nominal</td>
                         <td class="px-6">:</td>
-                        <td class="font-semibold">Rp. 25.000.000</td>
+                        <td class="font-semibold">Rp. 6.150.000</td>
                     </tr>
                 </table>
             </div>

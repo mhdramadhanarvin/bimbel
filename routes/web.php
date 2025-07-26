@@ -3,13 +3,17 @@
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('homepage');
-})->name('home');
+})->name('home')->middleware(['guest']);
 
-Route::view('dashboard', 'dashboard')
+Route::get('dashboard', function () {
+    Auth::logout();
+    return redirect()->route('home');
+})
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
