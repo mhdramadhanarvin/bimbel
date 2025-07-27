@@ -13,31 +13,31 @@ use Livewire\Component;
 #[Layout('components.layouts.auth')]
 class Register extends Component
 {
-    public string $name = 'name';
+    public string $name = '';
 
-    public string $email = 'user2@example.com';
+    public string $email = '';
 
-    public string $gender = 'male';
+    public string $gender = '';
 
-    public string $place_of_birth = 'adwmwak';
+    public string $place_of_birth = '';
 
-    public string $date_of_birth = '2001/01/01';
+    public string $date_of_birth = '';
 
-    public string $religion = 'islam';
+    public string $religion = '';
 
-    public string $address = 'address';
+    public string $address = '';
 
-    public string $phone_number = '08';
+    public string $phone_number = '';
 
-    public string $origin_school = 'sma';
+    public string $origin_school = '';
 
-    public string $programme = 'tni';
+    public string $programme = '';
 
-    public string $parent_name = 'asno';
+    public string $parent_name = '';
 
-    public string $parent_phone_number = '08';
+    public string $parent_phone_number = '';
 
-    public string $parent_address = 'jl';
+    public string $parent_address = '';
 
     /* public string $password = ''; */
     /**/
