@@ -1,86 +1,67 @@
-# Stage 1: PHP & Composer (Laravel Dependencies)
-FROM php:8.3-fpm-alpine AS php_builder
+# Base image
+FROM php:8.4-apache
 
-# Install PHP extensions and system dependencies
-RUN apk add --no-cache \
+# Set working directory in the container
+WORKDIR /var/www/html
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
     git \
+    g++ \
     curl \
     libzip-dev \
+    libjpeg-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
     libpng-dev \
-    libjpeg-turbo-dev \
-    oniguruma-dev \
+    libwebp-dev \
+    libonig-dev \
+    libxml2-dev \
     zip \
     unzip \
-    icu-dev \
-    bash \
-    openssl \
-    postgresql-dev \
-    shadow \
-    && docker-php-ext-install pdo pdo_mysql mbstring zip intl opcache gd
+    && rm -rf /var/lib/apt/lists/*
+
+# Configure GD extension
+RUN docker-php-ext-configure gd \
+    --with-freetype=/usr/include/ \
+    --with-jpeg=/usr/lib/x86_64-linux-gnu \
+    --with-webp=/usr/lib/x86_64-linux-gnu
+
+# Install PHP extensions
+RUN docker-php-ext-install -j$(nproc) gd pdo_mysql mbstring exif pcntl bcmath zip intl
+
+# Configure Apache
+RUN echo "ServerName laravel-app.local" >> /etc/apache2/apache2.conf
+ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+RUN a2enmod rewrite headers
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Set working directory
-WORKDIR /var/www/html
+# Install Node.js (latest LTS version)
+RUN apt-get update && curl -sL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g npm
 
-# Copy project files (only PHP-related first for caching)
-COPY . .
+# Copy the application files and set permissions
+COPY --chown=www-data:www-data . /var/www/html
+RUN rm -rf vendor node_modules
 
 # Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install
 
-# Copy the rest of the application files
-COPY . .
-
-# Stage 2: Node build (frontend assets)
-FROM node:20-alpine AS node_builder
-
-WORKDIR /app
-
-# Copy necessary files
-COPY package.json package-lock.json ./
+# Install Node.js dependencies and build assets
 RUN npm install
-
-# Copy remaining files and build assets
-COPY . .
 RUN npm run build
 
-# Stage 3: Final production image
-FROM php:8.3-fpm-alpine
+# Set proper permissions for storage and bootstrap cache
+# RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/public
 
-# Install system dependencies and PHP extensions
-RUN apk add --no-cache \
-    libzip \
-    libzip-dev \
-    icu-dev \
-    libpng \
-    libpng-dev \
-    libjpeg-turbo \
-    oniguruma \
-    icu-libs \
-    bash \
-    openssl \
-    shadow \
-    && docker-php-ext-install pdo pdo_mysql zip intl opcache gd
+# Expose port 80
+EXPOSE 80
 
-# Set working directory
-WORKDIR /var/www/html
-
-# Copy Laravel application from php_builder
-COPY --from=php_builder /var/www/html /var/www/html
-
-# Copy built assets from node_builder
-COPY --from=node_builder /app/public ./public
-COPY --from=node_builder /app/node_modules ./node_modules
-
-# Set permissions
-RUN addgroup -g 1000 www && \
-    adduser -G www -g www -s /bin/sh -D www && \
-    chown -R www:www /var/www/html && \
-    chmod -R 775 storage bootstrap/cache
-
-USER www
-
-EXPOSE 9000
-CMD ["php-fpm"]
+# Start Apache in foreground
+CMD ["apache2-foreground"]
