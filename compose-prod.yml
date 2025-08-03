@@ -4,7 +4,6 @@ services:
       context: .
       dockerfile: Dockerfile
     image: bimbel-prod
-    container_name: laravel12-app
     restart: unless-stopped
     env_file:
       - ./.env
@@ -42,7 +41,6 @@ services:
 
   mysql:
     image: mysql:8.0
-    container_name: mysql
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: laravel
