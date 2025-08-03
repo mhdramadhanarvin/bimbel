@@ -49,7 +49,7 @@
             :placeholder="__('Tanggal Lahir')"
         />
 
-        <flux:select wire:model="gender" label="Agama" placeholder="Pilih Agama">
+        <flux:select wire:model="religion" label="Agama" placeholder="Pilih Agama">
             <flux:select.option value="islam">Islam</flux:select.option>
             <flux:select.option value="protestan">Kristen Protestan</flux:select.option>
             <flux:select.option value="katolik">Kristen Katolik</flux:select.option>
@@ -87,7 +87,7 @@
             :placeholder="__('Asal Sekolah')"
         />
 
-        <label class="text-lg font-semibold mt-4"> Data Pribadi Siswa</label>
+        <label class="text-lg font-semibold mt-4"> Data Orangtua</label>
 
         <flux:input
             wire:model="parent_name"
