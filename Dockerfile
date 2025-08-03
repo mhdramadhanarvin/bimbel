@@ -57,8 +57,8 @@ RUN npm install
 RUN npm run build
 
 # Set proper permissions for storage and bootstrap cache
-# RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/public
+RUN php artisan storage:link
 
 # Expose port 80
 EXPOSE 80
