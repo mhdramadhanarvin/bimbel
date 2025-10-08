@@ -10,13 +10,13 @@ RUN apt-get update && apt-get install -y \
     g++ \
     curl \
     libzip-dev \
-    libjpeg-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
     libpng-dev \
     libwebp-dev \
     libonig-dev \
     libxml2-dev \
+    libicu-dev \
     zip \
     unzip \
     && rm -rf /var/lib/apt/lists/*
@@ -24,11 +24,12 @@ RUN apt-get update && apt-get install -y \
 # Configure GD extension
 RUN docker-php-ext-configure gd \
     --with-freetype=/usr/include/ \
-    --with-jpeg=/usr/lib/x86_64-linux-gnu \
-    --with-webp=/usr/lib/x86_64-linux-gnu
+    --with-jpeg=/usr/exclude/ \
+    --with-webp=/usr/exclude/
 
 # Install PHP extensions
-RUN docker-php-ext-install -j$(nproc) gd pdo_mysql mbstring exif pcntl bcmath zip intl
+RUN docker-php-ext-install -j$(nproc) pdo_mysql mbstring exif bcmath zip intl gd \
+   && docker-php-ext-enable intl gd
 
 # Configure Apache
 RUN echo "ServerName laravel-app.local" >> /etc/apache2/apache2.conf

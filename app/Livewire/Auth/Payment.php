@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Auth;
 
+use App\Jobs\SendPaymentConfirmation;
 use App\Models\UserPayment;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -37,11 +38,13 @@ class Payment extends Component
         $proof_of_payment = $this->proof_of_payment->store('proof_of_payment', 'public');
 
         $this->registration_number = Str::of(fake()->regexify('[A-Za-z0-9]{8}'))->upper();
-        UserPayment::create([
+        $payment = UserPayment::create([
             'user_id' => Auth::user()->id,
             'proof_of_payment' => $proof_of_payment,
             'registration_number' => $this->registration_number
         ]);
+
+        SendPaymentConfirmation::dispatch($payment);
 
         $this->modal('success')->show();
     }

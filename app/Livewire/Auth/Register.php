@@ -6,36 +6,61 @@ use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
 #[Layout('components.layouts.auth')]
 class Register extends Component
 {
+    /* public string $name = 'test'; */
+
     public string $name = '';
 
     public string $email = '';
 
+    /* public string $email = 'test@example.com'; */
+
+    /* public string $gender = 'male'; */
+
     public string $gender = '';
+
+    /* public string $place_of_birth = 'test'; */
 
     public string $place_of_birth = '';
 
+    /* public string $date_of_birth = '2000-01-01'; */
+
     public string $date_of_birth = '';
+
+    /* public string $religion = 'islam'; */
 
     public string $religion = '';
 
+    /* public string $address = 'test'; */
+
     public string $address = '';
+
+    /* public string $phone_number = '08'; */
 
     public string $phone_number = '';
 
+    /* public string $origin_school = 'test'; */
+
     public string $origin_school = '';
+
+    /* public string $programme = 'polri'; */
 
     public string $programme = '';
 
+    /* public string $parent_name = 'test'; */
+
     public string $parent_name = '';
 
+    /* public string $parent_phone_number = '08'; */
+
     public string $parent_phone_number = '';
+
+    /* public string $parent_address = 'test'; */
 
     public string $parent_address = '';
 

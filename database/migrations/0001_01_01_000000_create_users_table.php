@@ -37,6 +37,7 @@ return new class extends Migration {
             $table->string('registration_number');
             $table->string('proof_of_payment');
             $table->enum('status', ['pending', 'confirmed', 'rejected']);
+            $table->boolean('is_notify')->default(false);
             $table->timestamps();
         });
 
