@@ -15,11 +15,11 @@ use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Mockery\Undefined;
 
 class UserResource extends Resource
 {
@@ -49,25 +49,23 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('user_payment.registration_number')->label('No. Pendaftaran')->searchable()->placeholder('-'),
+                TextColumn::make('userPayment.registration_number')->label('No. Pendaftaran')->searchable()->placeholder('-'),
                 TextColumn::make('name')->label('Nama Lengkap')->searchable(),
                 TextColumn::make('email')->searchable(),
                 TextColumn::make('created_at')->label('Daftar Pada'),
-                TextColumn::make('user_payment.status')
+                TextColumn::make('userPayment.status')
                     ->label('Status')
                     ->badge()
-                    ->placeholder('Belum Melakukan Pendaftaran'),
+                    ->placeholder('Belum Melakukan Pendaftaran')
             ])
-            ->filters([
-                //
-            ])
+            ->filters([])
             ->actions([
                 Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                /* Tables\Actions\BulkActionGroup::make([ */
+                /* Tables\Actions\DeleteBulkAction::make(), */
+                /* ]), */
             ]);
     }
 
@@ -77,12 +75,12 @@ class UserResource extends Resource
             ->schema([
                 Section::make()->schema([
                     Section::make()->columns(['sm' => 3])->schema([
-                        TextEntry::make('user_payment.status')
+                        TextEntry::make('userPayment.status')
                             ->label('Status')
                             ->badge()
                             ->placeholder('Belum Melakukan Pembayaran'),
-                        TextEntry::make('user_payment.registration_number')->label('No. Pendaftaran')->placeholder('-'),
-                        TextEntry::make('user_payment.created_at')
+                        TextEntry::make('userPayment.registration_number')->label('No. Pendaftaran')->placeholder('-'),
+                        TextEntry::make('userPayment.created_at')
                             ->label('Tanggal Pembayaran')
                             ->dateTime('d M Y H:i')
                             ->placeholder('2000/01/01'),
@@ -106,7 +104,7 @@ class UserResource extends Resource
                         TextEntry::make('parent_address')->label('Alamat Orangtua'),
                     ]),
                     Section::make()->columns(['sm' => 3])->schema([
-                        ImageEntry::make('user_payment.proof_of_payment')->label('Bukti Pembayaran'),
+                        ImageEntry::make('userPayment.proof_of_payment')->label('Bukti Pembayaran'),
                     ]),
                 ]),
                 Actions::make([
@@ -115,20 +113,20 @@ class UserResource extends Resource
                         ->icon('heroicon-m-check')
                         ->color('success')
                         ->action(function (User $record) {
-                            $record->user_payment->status = 'confirmed';
-                            $record->user_payment->save();
+                            $record->userPayment->status = 'confirmed';
+                            $record->userPayment->save();
                         })
-                        ->visible(fn($record) => $record->user_payment?->status == UserPaymentStatusEnum::WAITING_CONFIRMATION)
+                        ->visible(fn($record) => $record->userPayment?->status == UserPaymentStatusEnum::WAITING_CONFIRMATION)
                         ->requiresConfirmation(),
                     ActionInfolist::make('reject')
                         ->label('Tolak Pembayaran')
                         ->icon('heroicon-m-x-mark')
                         ->color('danger')
                         ->action(function (User $record) {
-                            $record->user_payment->status = 'rejected';
-                            $record->user_payment->save();
+                            $record->userPayment->status = 'rejected';
+                            $record->userPayment->save();
                         })
-                        ->visible(fn($record) => $record->user_payment?->status == UserPaymentStatusEnum::WAITING_CONFIRMATION)
+                        ->visible(fn($record) => $record->userPayment?->status == UserPaymentStatusEnum::WAITING_CONFIRMATION)
                         ->requiresConfirmation()
                 ])
             ]);

@@ -70,7 +70,7 @@ class User extends Authenticatable implements FilamentUser
         return str_starts_with($this->email, 'admin') && $this->hasVerifiedEmail();
     }
 
-    public function user_payment(): HasOne
+    public function userPayment(): HasOne
     {
         return $this->hasOne(UserPayment::class);
     }
