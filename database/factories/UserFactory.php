@@ -48,18 +48,18 @@ class UserFactory extends Factory
     public function student(): static
     {
         return $this->state(fn(array $attributes) => [
-            'gender' => $this->faker->randomElement(UserGenderEnum::cases())->value,
-            'place_of_birth' => $this->faker->city(),
-            'date_of_birth' => $this->faker->date('Y-m-d'),  // Format as string
-            'religion' => $this->faker->randomElement(UserReligionEnum::cases())->value,
-            'address' => $this->faker->address(),
-            'phone_number' => $this->faker->phoneNumber(),
-            'programme' => $this->faker->randomElement(UserProgramEnum::cases())->value,
-            'origin_school' => $this->faker->company() . ' School',  // Random school name
-            'parent_name' => $this->faker->name(),
-            'parent_phone_number' => $this->faker->phoneNumber(),
-            'parent_address' => $this->faker->address(),
-            'created_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
+            'gender' => fake()->randomElement(UserGenderEnum::cases())->value,
+            'place_of_birth' => fake()->city(),
+            'date_of_birth' => fake()->date('Y-m-d'),  // Format as string
+            'religion' => fake()->randomElement(UserReligionEnum::cases())->value,
+            'address' => fake()->address(),
+            'phone_number' => fake()->phoneNumber(),
+            'programme' => fake()->randomElement(UserProgramEnum::cases())->value,
+            'origin_school' => fake()->company() . ' School',  // Random school name
+            'parent_name' => fake()->name(),
+            'parent_phone_number' => fake()->phoneNumber(),
+            'parent_address' => fake()->address(),
+            'created_at' => fake()->dateTimeBetween('-1 year', 'now'),
         ]);
     }
 }

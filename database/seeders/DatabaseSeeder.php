@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@example.com',
         ]);
 
-        User::factory(550)->has(UserPayment::factory())->student()->create();
+        User::factory(10)->has(UserPayment::factory())->student()->create();
     }
 }
