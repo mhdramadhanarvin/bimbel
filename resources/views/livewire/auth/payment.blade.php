@@ -23,22 +23,22 @@
                 <table class="text-md">
                     <tr>
                         <td>SPP</td>
-                        <td class="text-sm px-14">1 Bulan</td>
+                        <td class="text-sm px-10">1 Bulan</td>
                         <td class="font-semibold">Rp. 5.000.000</td>
                     </tr>
                     <tr>
                         <td>Asrama</td>
-                        <td class="text-sm px-14">1 Bulan</td>
+                        <td class="text-sm px-10">1 Bulan</td>
                         <td class="font-semibold">Rp. 350.000</td>
                     </tr>
                     <tr>
                         <td>Konsumsi</td>
-                        <td class="text-sm px-14">1 Bulan</td>
+                        <td class="text-sm px-10">1 Bulan</td>
                         <td class="font-semibold">Rp. 800.000</td>
                     </tr>
                     <tr>
                         <td class="font-semibold">TOTAL</td>
-                        <td class="text-sm px-14"></td>
+                        <td class="text-sm px-10"></td>
                         <td class="font-semibold">Rp. 6.150.000</td>
                     </tr>
                 </table>
@@ -49,21 +49,21 @@
                 <table class="text-md">
                     <tr>
                         <td>Nama Bank</td>
-                        <td class="px-6">:</td>
+                        <td class="px-3">:</td>
                         <td class="font-semibold">Bank Central Asia</td>
                     </tr>
                     <tr>
                         <td>Nomor Rekening</td>
-                        <td class="px-6">:</td>
+                        <td class="px-3">:</td>
                         <td class="font-semibold">1234 1234 1234 1234</td>
                     </tr>
                     <tr>
                         <td>Nama Akun</td>
-                        <td class="px-6">:</td>
+                        <td class="px-3">:</td>
                         <td class="font-semibold">Bimbel UNIBEN</td> </tr>
                     <tr>
                         <td>Nominal</td>
-                        <td class="px-6">:</td>
+                        <td class="px-3">:</td>
                         <td class="font-semibold">Rp. 6.150.000</td>
                     </tr>
                 </table>

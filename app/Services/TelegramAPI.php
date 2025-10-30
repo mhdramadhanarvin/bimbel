@@ -51,6 +51,7 @@ class TelegramAPI
                     'reply_markup' => json_encode($keyboard)
                 ]);
 
+            Log::debug($imageUrl);
             $result = $response->json();
 
             return [

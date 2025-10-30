@@ -23,7 +23,7 @@ class UserPaymentFactory extends Factory
             'registration_number' => fake()->unique()->regexify('[A-Z]{3}[0-9]{6}'),
             'proof_of_payment' => $this->copyingFile(fake()->randomElement(['200x200.png', '250x250.png'])),
             'status' => fake()->randomElement(['pending', 'confirmed', 'rejected']),
-            'is_notify' => fake()->boolean(),
+            'is_notify' => true,
         ];
     }
 

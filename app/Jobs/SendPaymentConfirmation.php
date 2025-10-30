@@ -10,12 +10,17 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class SendPaymentConfirmation implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+    public $tries = 5;
+    public $timeout = 60;
+    public $failOnTimeout = true;
 
     /**
      * Create a new job instance.
@@ -32,6 +37,7 @@ class SendPaymentConfirmation implements ShouldQueue
     public function handle(TelegramAPI $bot): void
     {
         try {
+            DB::beginTransaction();
             $payment = UserPayment::with('user')->find($this->payment->id);
             $adminChatId = config('services.telegram.admin_chat_id');
             $imageUrl = Str::remove('public/', asset('storage/' . $payment->proof_of_payment));
@@ -48,13 +54,19 @@ class SendPaymentConfirmation implements ShouldQueue
 
             $result = $bot->sendPaymentConfirmation($adminChatId, $imageUrl, $paymentData, $webhookUrl);
 
-            Log::debug($result['data']['result']['message_id']);
+            Log::debug($result);
             TelegramApiLog::insert([
                 'message_id' => $result['data']['result']['message_id'],
                 'payment_id' => $this->payment->id
             ]);
+            $payment->update([
+                'is_notify' => 1
+            ]);
+            DB::commit();
         } catch (\Throwable $e) {
+            DB::rollBack();
             Log::error('SendPaymentConfirmation :' . $e->getMessage());
+            $this->release();
         }
     }
 }
