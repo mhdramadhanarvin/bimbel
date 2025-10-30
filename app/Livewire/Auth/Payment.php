@@ -40,7 +40,7 @@ class Payment extends Component
         $this->registration_number = Str::of(fake()->regexify('[A-Za-z0-9]{8}'))->upper();
         $payment = UserPayment::create([
             'user_id' => Auth::user()->id,
-            'proof_of_payment' => '/' . $proof_of_payment,
+            'proof_of_payment' => $proof_of_payment,
             'registration_number' => $this->registration_number
         ]);
 
