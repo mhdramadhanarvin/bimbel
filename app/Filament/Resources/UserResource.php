@@ -3,9 +3,11 @@
 namespace App\Filament\Resources;
 
 use App\Enums\UserPaymentStatusEnum;
+use App\Filament\Exports\UserExporter;
 use App\Filament\Resources\UserResource\Pages;
 use App\Models\User;
 use Carbon\Carbon;
+use Filament\Actions\Exports\Enums\ExportFormat;
 use Filament\Forms\Form;
 use Filament\Infolists\Components\Actions\Action as ActionInfolist;
 use Filament\Infolists\Components\Actions;
@@ -15,7 +17,6 @@ use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
@@ -52,7 +53,8 @@ class UserResource extends Resource
                 TextColumn::make('userPayment.registration_number')->label('No. Pendaftaran')->searchable()->placeholder('-'),
                 TextColumn::make('name')->label('Nama Lengkap')->searchable(),
                 TextColumn::make('email')->searchable(),
-                TextColumn::make('created_at')->label('Daftar Pada'),
+                TextColumn::make('userPayment.created_at')->label('Daftar Pada')->getStateUsing(fn($record) => Carbon::parse($record->created_at, 'Asia/Jakarta')->format('d F Y')),
+                TextColumn::make('')->label('Akhir Belajar')->getStateUsing(fn($record) => Carbon::parse($record->created_at, 'Asia/Jakarta')->addMonth()->format('d F Y')),
                 TextColumn::make('userPayment.status')
                     ->label('Status')
                     ->badge()
@@ -61,6 +63,16 @@ class UserResource extends Resource
             ->filters([])
             ->actions([
                 Tables\Actions\ViewAction::make(),
+            ])
+            ->headerActions([
+                Tables\Actions\ExportAction::make()
+                    ->exporter(UserExporter::class)
+                    ->modifyQueryUsing(fn(Builder $query) => $query->leftJoinRelationship('userPayment')->where('user_payments.status', UserPaymentStatusEnum::APPROVED))
+                    ->label('Export Data')
+                    ->columnMapping(false)
+                    ->formats([
+                        ExportFormat::Xlsx
+                    ])
             ])
             ->bulkActions([
                 /* Tables\Actions\BulkActionGroup::make([ */
@@ -74,7 +86,7 @@ class UserResource extends Resource
         return $infolist
             ->schema([
                 Section::make()->schema([
-                    Section::make()->columns(['sm' => 3])->schema([
+                    Section::make()->columns(['sm' => 4])->schema([
                         TextEntry::make('userPayment.status')
                             ->label('Status')
                             ->badge()
@@ -84,6 +96,11 @@ class UserResource extends Resource
                             ->label('Tanggal Pembayaran')
                             ->dateTime('d M Y H:i')
                             ->placeholder('2000/01/01'),
+                        TextEntry::make('userPayment.created_at')
+                            ->label('Tanggal Akhir Pembelajaran')
+                            ->dateTime('d M Y')
+                            ->placeholder('2000/01/01')
+                            ->getStateUsing(fn($record) => Carbon::parse($record->userPayment->created_at, 'Asia/Jakarta')->addMonth()->format('d F Y')),
                     ]),
                     Section::make('Data Siswa')->columns(['sm' => 3])->schema([
                         TextEntry::make('name')->label('Nama Lengkap'),

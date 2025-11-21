@@ -308,15 +308,16 @@
          -->
 
 		<!-- TESTIMONIAL -->
-		<div class="mt-24 flex flex-col-reverse md:flex-row items-start md:space-x-10">
-			<div data-aos="zoom-in-right" class="md:w-5/12">
-				<div class="flex items-center space-x-20 mb-5">
-					<span class="border border-gray-300 w-14 absolute"></span>
-					<h1 class="text-gray-400 tracking-widest text-sm">Testimoni</h1>
-				</div>
-				<h1 class="font-semibold text-darken text-2xl lg:pr-40">Kisah Sukses Mereka, Inspirasi Bagimu</h1>
-				<p class="text-gray-500 my-5 lg:pr-36">Kami bangga dengan lebih dari 100 ulasan positif siswa yang berhasil mewujudkan impian mereka di TNI/Polri berkat bimbingan kami.</p>
-				<p class="text-gray-500 my-5 lg:pr-36">Apakah Anda siap menjadi bagian dari cerita sukses berikutnya?</p>
+        <div class="mt-24 flex flex-col-reverse md:flex-row items-start md:space-x-10">
+            <!-- Left text stays the same -->
+            <div data-aos="zoom-in-right" class="md:w-5/12">
+                <div class="flex items-center space-x-20 mb-5">
+                    <span class="border border-gray-300 w-14 absolute"></span>
+                    <h1 class="text-gray-400 tracking-widest text-sm">Testimoni</h1>
+                </div>
+                <h1 class="font-semibold text-darken text-2xl lg:pr-40">Kisah Sukses Mereka, Inspirasi Bagimu</h1>
+                <p class="text-gray-500 my-5 lg:pr-36">Kami bangga dengan lebih dari 100 ulasan positif siswa yang berhasil mewujudkan impian mereka di TNI/Polri berkat bimbingan kami.</p>
+                <p class="text-gray-500 my-5 lg:pr-36">Apakah Anda siap menjadi bagian dari cerita sukses berikutnya?</p>
                 <a href="{{ route('register') }}">
                     <button class="flex items-center space-x-3 pl-3 border-b border-l border-t border-yellow-500 text-yellow-500 font-medium my-4 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full">
                         <span>Saya ingin seperti mereka</span>
@@ -327,11 +328,38 @@
                         </div>
                     </button>
                 </a>
-			</div>
-			<div data-aos="zoom-in-left" class="md:w-7/12">
-				<img class="md:w-10/12 mx-auto" src="{{ asset('images/testi.png') }}">
-			</div>
-		</div>
+            </div>
+
+            <!-- Right image area: Convert to slider -->
+            <div data-aos="zoom-in-left" class="md:w-7/12 relative overflow-hidden">
+                <div id="slider" class="flex transition-transform duration-1000 ease-in-out transform">
+                    <!-- Slide 1: Original image -->
+                    <div class="w-full flex-shrink-0">
+                        <img class="md:w-10/12 mx-auto" src="{{ asset('images/testi.png') }}" alt="Testimonial 1">
+                    </div>
+                    <!-- Slide 2: Duplicate for sliding (replace with real content) -->
+                    <div class="w-full flex-shrink-0">
+                        <img class="md:w-10/12 mx-auto" src="{{ asset('images/testi2.png') }}" alt="Testimonial 2">
+                    </div>
+                    <!-- Slide 3: Another duplicate -->
+                    <div class="w-full flex-shrink-0">
+                        <img class="md:w-10/12 mx-auto" src="{{ asset('images/testi3.png') }}" alt="Testimonial 3">
+                    </div>
+                    <!-- Slide 4: Another duplicate -->
+                    <div class="w-full flex-shrink-0">
+                        <img class="md:w-10/12 mx-auto" src="{{ asset('images/testi4.png') }}" alt="Testimonial 3">
+                    </div>
+                    <!-- Slide 5: Original image -->
+                    <div class="w-full flex-shrink-0">
+                        <img class="md:w-10/12 mx-auto" src="{{ asset('images/testi5.png') }}" alt="Testimonial 1">
+                    </div>
+                    <!-- Slide 6: Duplicate for sliding (replace with real content) -->
+                    <div class="w-full flex-shrink-0">
+                        <img class="md:w-10/12 mx-auto" src="{{ asset('images/testi6.png') }}" alt="Testimonial 2">
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div  id="about"></div>
 		<!-- Latest News and Resources -->
@@ -403,6 +431,17 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
     	AOS.init();
+    </script>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('#slider > div');
+        const totalSlides = slides.length;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            document.getElementById('slider').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }, 3000); // Adjust interval for speed
     </script>
 </body>
 </html>
